@@ -1,10 +1,11 @@
 package NewTestCases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-public class NewTestCase {
+public class NewTestCaseLogin {
     @Test
     public void startDriver(){
 
@@ -13,7 +14,11 @@ public class NewTestCase {
         options.addArguments("--remote-allow-origins=*");
 
         ChromeDriver driver = new ChromeDriver(options);
-        driver.get("https://mvnrepository.com/artifact/org.testng/testng");
+        driver.get("https://test.my-fork.com/");
+
+        driver.findElement(By.xpath("//a[@class='menu-item log-in-button']")).click();
+
+
 
     }
 }

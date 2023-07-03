@@ -11,6 +11,8 @@ public class JavaOOP extends JavaBAM {
     String loginerrortext = "//div[@class='test-login-errors']";
     String loginbuttonlink = "//a[@class='menu-item log-in-button']";
     String checkbox = "auth-page-remember-me";
+    String emailvalue = "email@gg.y";
+    String passwordvalue = "password";
 
 
     @Test
@@ -22,8 +24,8 @@ public class JavaOOP extends JavaBAM {
     @Test
     public void verifylogin(){
         driver.get(urlLogin);
-        driver.findElement(By.xpath(emailfield)).sendKeys("email@gg.y");
-        driver.findElement(By.xpath(passwordfield)).sendKeys("password");
+        driver.findElement(By.xpath(emailfield)).sendKeys(emailvalue);
+        driver.findElement(By.xpath(passwordfield)).sendKeys(passwordvalue);
         driver.findElement(By.xpath(loginbutton)).sendKeys(Keys.ENTER);
 
     }
@@ -31,8 +33,8 @@ public class JavaOOP extends JavaBAM {
     @Test
     public void validateInvalid() throws InterruptedException {
         driver.get(urlLogin);
-        driver.findElement(By.xpath(emailfield)).sendKeys("email@gg.y");
-        driver.findElement(By.xpath(passwordfield)).sendKeys("password");
+        driver.findElement(By.xpath(emailfield)).sendKeys(emailvalue);
+        driver.findElement(By.xpath(passwordfield)).sendKeys(passwordvalue);
         driver.findElement(By.xpath(loginbutton)).sendKeys(Keys.ENTER);
         Thread.sleep(1000);
         System.out.println(driver.findElement(By.xpath(loginerrortext)).isDisplayed());

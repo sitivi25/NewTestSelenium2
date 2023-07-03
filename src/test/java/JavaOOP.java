@@ -1,12 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
-import java.sql.SQLOutput;
-
-public class Toys extends JavaBAM {
+public class JavaOOP extends JavaBAM {
     String url = "https://test.my-fork.com/";
     String urlLogin = "https://test.my-fork.com/login";
     String emailfield = "//input[@id='email']";
@@ -15,6 +11,7 @@ public class Toys extends JavaBAM {
     String loginerrortext = "//div[@class='test-login-errors']";
     String loginbuttonlink = "//a[@class='menu-item log-in-button']";
     String checkbox = "auth-page-remember-me";
+
 
     @Test
     public void verifyCheckbox() throws InterruptedException {
@@ -32,7 +29,7 @@ public class Toys extends JavaBAM {
     }
 
     @Test
-    public void ValidateInvalid() throws InterruptedException {
+    public void validateInvalid() throws InterruptedException {
         driver.get(urlLogin);
         driver.findElement(By.xpath(emailfield)).sendKeys("email@gg.y");
         driver.findElement(By.xpath(passwordfield)).sendKeys("password");
@@ -42,12 +39,12 @@ public class Toys extends JavaBAM {
 
     }
     @Test
-    public void Login() {
+    public void login() {
         driver.get(url);
         driver.findElement(By.xpath(loginbuttonlink)).click();
     }
     @Test
-    public void TrueValidate(){
+    public void trueValidate(){
         driver.get(urlLogin);
         System.out.println(driver.findElement(By.xpath(emailfield)).isDisplayed());
         System.out.println(driver.findElement(By.xpath(passwordfield)).isDisplayed());
@@ -55,7 +52,7 @@ public class Toys extends JavaBAM {
 
     }
     @Test
-    public void Website() {
+    public void website() {
         driver.get(url);
     }
 }

@@ -20,20 +20,8 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void fillEmailAndPasswordFieldsAndValidateError() throws InterruptedException {
+        homePage.takeMeToLoginPage();
         loginPage.fillEmailAndPasswordFieldsAndPressEnter();
         loginPage.displayError();
-    }
-
-    @Test
-    public void fillEmailAndPasswordFieldsAndValidateCheckbox() throws InterruptedException {
-        homePage.takeMeToLoginPage();
-        //loginPage.checkifRememberMeIsSelected();
-        System.out.println(driver.findElement(By.id(rememberMeId)).isSelected());
-    }
-
-    @Test
-    public void verifyCheckboxTest () throws InterruptedException{
-        homePage.takeMeToLoginPage();
-        System.out.println(driver.findElement(By.xpath(rememberMeId)).getText());
     }
 }

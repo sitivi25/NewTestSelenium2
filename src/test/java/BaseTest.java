@@ -20,6 +20,8 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
+
     }
 
 

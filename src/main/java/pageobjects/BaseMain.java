@@ -29,9 +29,9 @@ public class BaseMain{
         js.executeScript("window.scrollBy(0,"+pixels+")", "");
         //js.executeScript("window.scrollBy(0,-2500)", "");
     }
-    public void wait30(int sec){
-        WebDriverWait waitForDropdownToLoad = new WebDriverWait(driver, Duration.ofSeconds(30));
-        waitForDropdownToLoad.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='loginButton']/button")));
+    public void explicitWait(By locator, int sec){
+        WebDriverWait waitForDropdownToLoad = new WebDriverWait(driver, Duration.ofSeconds(sec));
+        waitForDropdownToLoad.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
 }

@@ -10,7 +10,7 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void DropdownListHW() {
-        driver.get("https://test.my-fork.com/register");
+        driver.get(websiteURL);
         WebElement searchDropdownElement;
         searchDropdownElement = driver.findElement(By.xpath("//select[@id='job-title']"));
         Select searchDropdown = new Select(searchDropdownElement);

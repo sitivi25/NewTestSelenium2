@@ -13,4 +13,20 @@ public class NewTestCase {
         ChromeDriver driver = new ChromeDriver(options);
         driver.get("https://mvnrepository.com/artifact/org.testng/testng");
     }
+
+    @Test
+    public void a(){
+        String stroka = "это строка";
+        int a = 2;
+        boolean validate;
+
+        System.out.println("Мы написали строку [" + stroka + "] " + a + " раз");
+
+        a = 5;
+        stroka = "jjjjjj";
+        System.out.println("Мы написали строку [" + stroka + "] " + a + " раз");
+        System.out.println("Мы написали строку [stroka] " + a + " раз");
+        System.out.println(stroka);
+        System.out.println("stroka");
+    }
 }

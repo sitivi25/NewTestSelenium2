@@ -34,7 +34,7 @@ public class SoftAssertions extends BaseTest{
         softAssert.assertFalse(loadedURL.contains("register"),"Assertion for the URL register");
         driver.get(workURL);
         String actualHeader = driver.findElement(By.xpath("//div[@class='home-head-content-left-first-rectangle']/div")).getText();
-        Assert.assertNotEquals(actualHeader, "Create your course");
+        softAssert.assertNotEquals(actualHeader, "Create your course");
         softAssert.assertAll();
     }
 }

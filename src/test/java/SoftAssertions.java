@@ -22,37 +22,19 @@ public class SoftAssertions extends BaseTest{
     public void list(){
         driver.get(loadedURL);
         actualTitle = driver.getTitle();
-
         List<WebElement> elementList = driver.findElements(By.xpath(menuList));
         listSizeActual = elementList.size();
-
-        Assert.assertEquals(listSizeActual, listSizeExpected);
-    }
-
-    @Test
-    public void title(){
+        softAssert.assertEquals(listSizeActual, listSizeExpected);
         driver.get(workURL);
         actualTitle = driver.getTitle();
-
-//      Assert.assertEquals(actualTitle, expectedTitle);
-//      System.out.println("title is correct");
-
-      Assert.assertNotEquals(actualTitle, expectedTitle);
-      System.out.println("title is different");
-    }
-    @Test
-    public void assertionsTrueURL(){
+        softAssert.assertNotEquals(actualTitle, expectedTitle);
+        System.out.println("title is different");
         driver.get(loadedURL);
         String loadedURL = driver.getCurrentUrl();
-//        softAssert.assertTrue(loadedURL.contains("register"),"Assertion for the URL register");
         softAssert.assertFalse(loadedURL.contains("register"),"Assertion for the URL register");
-        softAssert.assertAll();
-    }
-
-    @Test
-    public void headers(){
         driver.get(workURL);
         String actualHeader = driver.findElement(By.xpath("//div[@class='home-head-content-left-first-rectangle']/div")).getText();
         Assert.assertNotEquals(actualHeader, "Create your course");
+        softAssert.assertAll();
     }
 }

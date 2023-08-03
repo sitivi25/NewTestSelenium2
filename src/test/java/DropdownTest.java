@@ -8,7 +8,7 @@ import java.util.List;
 public class DropdownTest extends BaseTest {
     public String websiteURL = "https://test.my-fork.com/register";
 
-    @Test
+    @Test(priority = 2, groups = {"home"})
     public void DropdownListHW() {
         driver.get(websiteURL);
         WebElement searchDropdownElement;

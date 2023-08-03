@@ -14,9 +14,9 @@ public class BaseTest {
     LoginPage loginPage;
     HomePage homePage;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"home", "feature"} , alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ZenBook\\IdeaProjects\\NewTestSelenium2\\src\\test\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ZenBook\\Documents\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
@@ -26,11 +26,8 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }
 
-
-    @AfterMethod
+    @AfterMethod(groups = {"home", "feature"} , alwaysRun = true)
     public void tearDown() {
-
         driver.quit(); // Close the driver
     }
 }
-

@@ -2,6 +2,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pageobjects.BaseMain;
+import pageobjects.GalleryPage;
 import pageobjects.HomePage;
 import pageobjects.LoginPage;
 
@@ -13,6 +15,8 @@ public class BaseTest {
 
     LoginPage loginPage;
     HomePage homePage;
+    BaseMain baseMain;
+    GalleryPage galleryPage;
 
     @BeforeMethod(groups = {"home", "feature"} , alwaysRun = true)
     public void setUp() {
@@ -22,6 +26,9 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
+        galleryPage = new GalleryPage(driver);
+        baseMain = new BaseMain(driver);
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
     }

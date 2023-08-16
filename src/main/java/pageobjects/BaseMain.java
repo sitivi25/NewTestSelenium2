@@ -32,6 +32,5 @@ public class BaseMain{
     public void explicitWait(By locator, int sec){
         WebDriverWait waitForDropdownToLoad = new WebDriverWait(driver, Duration.ofSeconds(sec));
         waitForDropdownToLoad.until(ExpectedConditions.visibilityOfElementLocated(locator));
-
     }
 }
